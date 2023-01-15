@@ -1,15 +1,11 @@
 import React from 'react';
-import { ipcRenderer } from 'electron';
+import SetupRoute from './routes';
 
 const App = () => {
   return (
-    <button
-      onClick={() => {
-        ipcRenderer.send('toMain', 'Integration Is Work!');
-      }}
-    >
-      Click Alert
-    </button>
+    <>
+      <SetupRoute />
+    </>
   );
 };
 

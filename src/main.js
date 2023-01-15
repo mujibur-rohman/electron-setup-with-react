@@ -9,7 +9,7 @@ const createWindow = () => {
     },
   });
 
-  win.loadFile('src/index.html');
+  win.loadFile('./src/index.html');
 
   ipcMain.on('toMain', (event, args) => {
     dialog.showMessageBoxSync(win, {
@@ -18,6 +18,7 @@ const createWindow = () => {
       title: 'Info',
     });
   });
+  console.log(process.env['ELECTRON_RENDERER_URL']);
 };
 
 app.whenReady().then(() => {
